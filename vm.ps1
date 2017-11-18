@@ -17,8 +17,8 @@ $VMSize = "Standard_A2"
 # Derived Variables
 #Storage Accounts
 $StorageAccount = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageName
-$OSDiskName = $VMName + "OSDisk"
-$InterfaceName = $VMName + "ServerInterface06"
+$OSDiskName = "disk"+$VMName + "-lun0"
+$InterfaceName = "nic-" + $VMName + "-01"
 
 # Network 
 $VNet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName
