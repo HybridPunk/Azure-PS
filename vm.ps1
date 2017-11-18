@@ -8,18 +8,18 @@ $StorageName = "storagevmstdgrs"
 ## Network
 $VNetName = "vnet_10.1.0.0_16"
 $Subnet1Name = "vlan_10.1.1.0_24"
-$InterfaceName = "ServerInterface06"
 
 ## Compute
 $VMName = "vm-test-002"
-$ComputerName = "Server22"
+$ComputerName = $VMName
 $VMSize = "Standard_A2"
-$OSDiskName = $VMName + "OSDisk"
 
 # Derived Variables
 #Storage Accounts
 $StorageAccount = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -Name $StorageName
-    
+$OSDiskName = $VMName + "OSDisk"
+$InterfaceName = $VMName + "ServerInterface06"
+
 # Network 
 $VNet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName
 $SubnetConfig = Get-AzureRmVirtualNetworkSubnetConfig -Name $Subnet1Name -VirtualNetwork $VNet
