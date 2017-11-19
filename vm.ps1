@@ -1,13 +1,13 @@
 # Variables
 ## Global
-$ResourceGroupName = "rg_1"
+$ResourceGroupName = "rg-2"
 $Location = "NorthEurope"
 ## Storage
 $StorageName = "storagevmstdgrs"
    
 ## Network
-$VNetName = "vnet_10.1.0.0_16"
-$Subnet1Name = "vlan_10.1.1.0_24"
+$VNetName = "vnet_192.168.0.0_16"
+$Subnet1Name = "vlan_192.168.1.0_24"
 
 ## Compute
 $VMName = "vm-test-002"
@@ -40,5 +40,4 @@ $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -Name $OSDiskName -Vhd
 New-AzureRmVM   -ResourceGroupName $ResourceGroupName -Location $Location -VM $VirtualMachine 
 # [[-DisableBginfoExtension]] `
 # [-LicenseType <System.String>] `
-# [-Tags <Hashtable>] 
-  
+# [-Tags <Hashtable>]   
